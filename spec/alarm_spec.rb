@@ -6,6 +6,7 @@ RSpec.describe Alarm do
   end
 
   it 'should turn on when pressure is not within threshold range' do
+    allow(Sensor).to receive(:sample_pressure) { 0 }
     subject.check
     expect(subject.is_alarm_on).to be(true)
   end
