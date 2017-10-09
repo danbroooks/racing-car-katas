@@ -12,12 +12,12 @@ class Alarm
   end
 
   def off?
-    @acceptable.include?(psi_pressure_value)
+    @acceptable.include?(pressure_value)
   end
 
   private
 
-  def psi_pressure_value
+  def pressure_value
     @sensor.pop_next_pressure_psi_value
   end
 end
