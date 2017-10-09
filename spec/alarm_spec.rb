@@ -1,6 +1,10 @@
 require 'alarm'
 
 RSpec.describe Alarm do
+  subject {
+    Alarm.new(Sensor.new())
+  }
+
   it 'should be turned off by default' do
     expect(subject.is_alarm_on).to be(false)
   end

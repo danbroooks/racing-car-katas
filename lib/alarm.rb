@@ -4,9 +4,9 @@ class Alarm
 
   attr_reader :is_alarm_on
 
-  def initialize
+  def initialize(sensor)
     @threshold = (17..21)
-    @sensor = Sensor.new()
+    @sensor = sensor
     @is_alarm_on = false
   end
 
