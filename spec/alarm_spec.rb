@@ -2,7 +2,7 @@ require 'alarm'
 
 RSpec.describe Alarm do
   subject {
-    Alarm.new(Sensor.new())
+    Alarm.new(Sensor.new(), 17..21)
   }
 
   it 'should not trigger the alarm when the pressure is in the threshold range' do

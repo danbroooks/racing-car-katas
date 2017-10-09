@@ -2,9 +2,9 @@ require 'sensor'
 
 class Alarm
 
-  def initialize(sensor)
-    @acceptable = 17..21
+  def initialize(sensor, acceptable)
     @sensor = sensor
+    @acceptable = acceptable
   end
 
   def on?
