@@ -3,12 +3,16 @@ require 'sensor'
 class Alarm
 
   def initialize(sensor)
-    @threshold = (17..21)
+    @acceptable = 17..21
     @sensor = sensor
   end
 
   def on?
-    @threshold.include?(psi_pressure_value) == false
+    !off?
+  end
+
+  def off?
+    @acceptable.include?(psi_pressure_value)
   end
 
   private
